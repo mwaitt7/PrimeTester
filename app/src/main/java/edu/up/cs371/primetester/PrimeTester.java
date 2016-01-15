@@ -15,20 +15,22 @@ public class PrimeTester {
      */
     public static boolean isPrime(long n) {
         long temp;
-        int boo = 0;
+        int boo = 1;
         if (n == 2) {
             return true;
         }
+        if(n<2)
+        {
+            return false;
+        }
         else {
-            for (int i = 2; i <= n; i++) {
+            for (int i = 2; i <= Math.sqrt(n); i++) {
                 temp = n % i;
                 if (temp == 0) {
                     boo = 0;
                     break;
-                } else {
-                    boo = 1;
-                    break;
                 }
+
             }
             if (boo == 0) {
                 return false;
